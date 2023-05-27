@@ -21,3 +21,4 @@ function largestDiff(arr) {
   }
 
   console.log(largestDiff([-1,2,3,10,9]))
+  console.log(largestDiff([1,4,33,998,-346,9821,-7843]))
