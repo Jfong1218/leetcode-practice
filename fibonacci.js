@@ -34,25 +34,40 @@ const expected6 = 21;
  * @returns {number} The fibonacci number at the given position.
  * memoization <------- 
  */
-// function fibonacci(num) {
-//     // edge case?
-//     // base case?
-//     if (num == 0){
-//         return 0
-//     }
-//     if (num == 1){
-//         return 1
-//     }
-//     // recursive call(s)
-//     return fibonacci(num-1)+ fibonacci(num-2)
-// }
-
-function fibonacci(num, memo) {
-    memo = memo || {}
-    if(num==0) return 0;
-    if(num==1) return 1;
-    return memo[num] = fibonacci(num-1, memo) + fibonacci(num-2, memo);
+//non-recursive method
+function fibonacci(num){
+  let count = 1
+  let low = 0
+  let high = 1
+  if (n < 2) return n
+  while (count != n) {
+    let temp = low + high;
+    low = high
+    high = temp
+    count ++
+  }
+  return high
 }
+//recursive method
+function fibonacci(num) {
+    // edge case?
+    // base case?
+    if (num == 0){
+        return 0
+    }
+    if (num == 1){
+        return 1
+    }
+    // recursive call(s)
+    return fibonacci(num-1)+ fibonacci(num-2)
+}
+
+// function fibonacci(num, memo) {
+//     memo = memo || {}
+//     if(num==0) return 0;
+//     if(num==1) return 1;
+//     return memo[num] = fibonacci(num-1, memo) + fibonacci(num-2, memo);
+// }
 
 console.log(fibonacci(num1)) // Expected: 0
 console.log(fibonacci(num2)) // Expected: 1
