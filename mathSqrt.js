@@ -10,14 +10,15 @@ function mySqrt(x) {
     if (x == 1){
         return 1
     }
-    let low = 1
+    let low = 0
     let high = x/2
-    let mid = Math.floor((low + high)/2)
     while (low <= high){
-        if (mid*mid == x ){
+        let mid = Math.floor((low + high)/2)
+        let square = mid*mid
+        if (square == x ){
             return mid
         }
-        if (mid*mid < x) {
+        if (square < x) {
             low = mid + 1
         }
         else {
@@ -26,3 +27,5 @@ function mySqrt(x) {
     }
     return high
   }
+
+  console.log(mySqrt(4))
